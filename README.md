@@ -1,3 +1,5 @@
+
+
 # Project: Docler Homework C#
 
 This project is about automated UI testing (with Selenium) of http://uitest.duodecadits.com based on the requirements using C# with SpecFlow and NUnit
@@ -35,6 +37,19 @@ Location of step definitions:
 \DocTest\StepDefinition -> StepDefinition1.cs
 ```
 
+Location of the page objects:
+
+```
+\DocTest\Pages
+```
+
+CommonMethods can be found in 'Utilities' folder.
+
+#### Running the test cases
+
+You can run the test cases with SpecFlow Runner or with NUnit.
+
+
 #### Author
-Bondár Tamás
+**Bondár Tamás**
 
