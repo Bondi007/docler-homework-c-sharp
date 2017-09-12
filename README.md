@@ -11,6 +11,7 @@ This project is about automated UI testing (with Selenium) of http://uitest.duod
 The following packages must be installed in Microsoft Visual Studio:
 - Selenium.Webdriver
 - Selenium.Chrome.Webdriver
+- Selenium.Support
 - Specflow
 - SpecRun.Runner
 - SpecRun.SpecFlow
