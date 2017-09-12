@@ -1,5 +1,6 @@
-﻿using NUnit.Framework;
+using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.PageObjects;
 
 namespace Pages
 {
@@ -10,7 +11,14 @@ namespace Pages
         public FormPage(IWebDriver driver)
         {
             this.driver = driver;
+            PageFactory.InitElements(driver, this);
         }
+
+        [FindsBy(How = How.Id, Using = "hello-input")]
+        private IWebElement inputField;
+
+        [FindsBy(How = How.Id, Using = "hello-submit")]
+        private IWebElement submitButton;
 
         public void GoTo()
         {
@@ -19,19 +27,19 @@ namespace Pages
 
         public void checkIfFormIsDisplayed()
         {
-            Assert.AreEqual(true, driver.FindElement(By.Id("hello-input")).Displayed);
-            Assert.AreEqual(true, driver.FindElement(By.Id("hello-submit")).Displayed);
+            Assert.AreEqual(true, inputField.Displayed);
+            Assert.AreEqual(true, submitButton.Displayed);
         }
 
         public void enterName(string name)
         {
-            driver.FindElement(By.Id("hello-input")).Clear();
-            driver.FindElement(By.Id("hello-input")).SendKeys(name);
+            inputField.Clear();
+            inputField.SendKeys(name);
         }
 
         public void clickOnSubmit()
         {
-            driver.FindElement(By.Id("hello-submit")).Click();
+            submitButton.Click();
         }
 
         public void checkName(string name)
